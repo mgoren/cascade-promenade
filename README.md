@@ -48,8 +48,8 @@ firebase login
 ## Create a Firebase project, which will also create a Google Cloud project with the same PROJECT_ID:
 
 ```sh
-firebase projects:create cascade-promenade
-firebase init database --project cascade-promenade
+firebase projects:create [PROJECT_ID]
+firebase init database --project [PROJECT_ID]
 firebase deploy --only database # accept defaults, don't overwrite dataabase rules
 ```
 
@@ -66,7 +66,7 @@ firebase deploy --only database # accept defaults, don't overwrite dataabase rul
 
 ```sh
 gcloud billing accounts list
-gcloud billing projects link cascade-promenade --billing-account [BILLING_ACCOUNT_ID]
+gcloud billing projects link [PROJECT_ID] --billing-account [BILLING_ACCOUNT_ID]
 ```
 
 ## Enable Google Cloud APIs & create API key:
@@ -74,10 +74,10 @@ gcloud billing projects link cascade-promenade --billing-account [BILLING_ACCOUN
 Update allowed-referrers list in `google-places-api-flags.yaml` file.
 
 ```sh
-gcloud services enable sheets.googleapis.com --project cascade-promenade
-gcloud services enable places-backend.googleapis.com --project cascade-promenade
-gcloud services enable maps-backend.googleapis.com --project cascade-promenade
-gcloud beta services api-keys create --flags-file=google-places-api-flags.yaml --project cascade-promenade
+gcloud services enable sheets.googleapis.com --project [PROJECT_ID]
+gcloud services enable places-backend.googleapis.com --project [PROJECT_ID]
+gcloud services enable maps-backend.googleapis.com --project [PROJECT_ID]
+gcloud beta services api-keys create --flags-file=google-places-api-flags.yaml --project [PROJECT_ID]
 ```
 
 Copy `keyString` value to `REACT_APP_GOOGLE_PLACES_API_KEY` in `.env`.
@@ -95,7 +95,7 @@ firebase apps:sdkconfig web
 - [Register site with recaptcha](https://www.google.com/recaptcha/admin/create)
 - label: [doesn't really matter]
 - reCAPTCHA type: v2 not a robot challege
-- Domains: localhost, cascade-promenade.web.app, EXAMPLE.COM (obviously replace with actual domain)
+- Domains: localhost, [PROJECT_ID].web.app, EXAMPLE.COM (obviously replace with actual domain)
 - Google Cloud Platform: associate with this google cloud project
 - Copy site key value to `REACT_APP_RECAPTCHA_SITE_KEY` in `.env`.
 
@@ -135,8 +135,8 @@ cd functions && npm install && cd ..
 **Database Update Firebase function:**
 
 ```sh
-gcloud iam service-accounts create firebase --project cascade-promenade
-gcloud iam service-accounts keys create tmp.json --iam-account firebase@cascade-promenade.iam.gserviceaccount.com
+gcloud iam service-accounts create firebase --project [PROJECT_ID]
+gcloud iam service-accounts keys create tmp.json --iam-account firebase@[PROJECT_ID].iam.gserviceaccount.com
 firebase functions:config:set database.service_account="$(cat tmp.json)"
 rm tmp.json
 firebase functions:config:get > functions/.runtimeconfig.json // for testing
@@ -149,7 +149,7 @@ _Note: Comment out the lines pertaining to Stripe in `functions/index.js` if not
 
 ```sh
 firebase functions:config:set stripe.secret_key="YOUR_STRIPE_SECRET_KEY"
-firebase functions:config:set stripe.site_url="https://cascade-promenade.web.app" // replace with actual front-end site URL
+firebase functions:config:set stripe.site_url="https://[PROJECT_ID].web.app" // replace with actual front-end site URL
 firebase functions:config:get > functions/.runtimeconfig.json // for testing
 firebase emulators:start --only functions // for testing
 firebase deploy --only functions // to deploy
@@ -160,8 +160,8 @@ firebase deploy --only functions // to deploy
 Create Google Cloud service account on project, save keys to firebase function config:
 
 ```sh
-gcloud iam service-accounts create sheets --project cascade-promenade
-gcloud iam service-accounts keys create tmp.json --iam-account sheets@cascade-promenade.iam.gserviceaccount.com
+gcloud iam service-accounts create sheets --project [PROJECT_ID]
+gcloud iam service-accounts keys create tmp.json --iam-account sheets@[PROJECT_ID].iam.gserviceaccount.com
 firebase functions:config:set googleapi.service_account="$(cat tmp.json)"
 rm tmp.json
 ```
@@ -171,7 +171,7 @@ Setup spreadsheet for recording orders:
 _Note: Update fields/columns as needed in `functions/fields.js` and in spreadsheet._
 
 - Make a copy of the [template spreadsheet](https://docs.google.com/spreadsheets/d/1gQ9l8wBTgNmiI0KmpECsDzCqePSPMnZFaecuj0VO_cU/edit?usp=sharing).
-- Give spreadsheet edit permissions to the service account email: `sheets@cascade-promenade.iam.gserviceaccount.com`
+- Give spreadsheet edit permissions to the service account email: `sheets@[PROJECT_ID].iam.gserviceaccount.com`
 - Determine your spreadsheet ID - the long string of characters (likely between `/d/` and `/edit`)
 
 ```sh

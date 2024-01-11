@@ -30,6 +30,6 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PORTLAND_ROADHOUSE }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CASCADE_PROMENADE }}'
           channelId: live
           projectId: '${{ secrets.REACT_APP_FIREBASE_PROJECT_ID }}'
