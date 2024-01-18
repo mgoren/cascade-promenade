@@ -143,6 +143,12 @@ const FIELD_CONFIG = {
   },
 }
 
+const DANCES = [
+  "The Archer",
+  "Bath Carnival",
+  "Braye's Maggot"
+];
+
 // below is config for this particular registration instance
 
 // order of FIRST_PERSON_FIELDS is used in emailConfirmationIsFirstInvalidField
@@ -206,24 +212,135 @@ const YES_NO_OPTIONS = [
   { label: 'No', value: 'no' },
 ]
 
-const DANCES = [
-  "The Archer",
-  "Bath Carnival",
-  "Braye's Maggot",
-  "Felix's Name Day*",
-  "The Flighty Nymph",
-  "Flora and Phaon",
-  "Foxfire*",
-  "Gleaners",
-  "Graphite",
-  "Ivy and a Rose",
-  "Land of Mist and Wonder",
-  "Master Barton's Arrival",
-  "Midwinter Maggot",
-  "Pine in the Path",
-  "Set for Spring",
-  "Way of the World",
-  "Young Widow"
+const EVENTS = [
+  {
+    day: 'Sunday, March 3, 2024',
+    start: '3:15 PM',
+    end: '5:45 PM',
+    dance: 'Seattle English Country Dance',
+    location: 'University Heights Center<br/>5031 University Way NE, Seattle 98105',
+    url: 'https://seattledance.org/english/'
+  },
+  {
+    day: 'Sunday, March 3, 2024',
+    start: '6:30 PM',
+    end: '10:00 PM',
+    dance: 'Portland Contra Remix',
+    location: 'Norse Hall upstairs<br/>111 NE 11th Ave, Portland, OR 97232',
+    url: 'https://www.contraremix.com/'
+  },
+  {
+    day: 'Monday, March 4, 2024',
+    start: '7:00 PM',
+    end: '9:00 PM',
+    dance: 'Seattle Skandia Folkdance',
+    location: 'University Heights Center, room 209<br/>5031 University Way NE, Seattle 98105',
+    url: 'https://skandia-folkdance.org/classes.html'
+  },
+  {
+    day: 'Monday, March 4, 2024',
+    start: '7:15 PM',
+    end: '9:15 PM',
+    dance: 'Norske Runddansere. Scandinavian Dance.',
+    location: 'Nordia House<br/>8800 SW Oleson Rd, Portland, OR 97223',
+    url: 'http://www.norskerunddansere.org/'
+  },
+  {
+    day: 'Monday, March 4, 2024',
+    start: '8:00 PM',
+    end: '10:30 PM',
+    dance: "Lenora's Ballroom Monday dance",
+    location: "Lenora's Ballroom<br/>3300 SE Woodward St, Portland, OR 97202",
+    url: 'https://www.lenorasballroom.com/'
+  },
+  {
+    day: 'Wednesday, March 6, 2024',
+    start: '7:30 PM',
+    end: '10:00 PM',
+    dance: 'Joyride Contra Dance',
+    location: 'Polish Library Association dance hall<br/>3832 N. Interstate Ave, Portland, OR 97227',
+    url: 'https://joyride.erikweberg.com/'
+  },
+  {
+    day: 'Thursday, March 7, 2024',
+    start: '6:00 PM',
+    end: '9:00 PM',
+    dance: 'Salem Contra Dance',
+    location: 'VFW Hall<br/>630 Hood St. NE, Salem OR 97301',
+    url: 'https://pcdc.fun/Salem240307'
+  },
+  {
+    day: 'Thursday, March 7, 2024',
+    start: '7:15 PM',
+    end: '10:00 PM',
+    dance: '16th Lake City Contra Marathon',
+    location: 'Benefit for NW Folklife<br/>Seattle Latvian Community Center<br/>11710 3rd Ave NE, Seattle, WA 98125',
+    url: 'https://seattledance.org/contra/lakecity/'
+  },
+  {
+    day: 'Friday, March 8, 2024',
+    start: '7:00 PM',
+    end: '10:00 PM',
+    dance: 'Emerald City Contra Dance',
+    location: 'Phinney Neighborhood Center<br/>(lower lot brick building)<br/>6532 Phinney Avenue North, Seattle 98103',
+    url: 'https://seattledance.org/contra/emeraldcity/'
+  },
+  {
+    day: 'Friday, March 8, 2024',
+    start: '7:00 PM',
+    end: '10:00 PM',
+    dance: 'Seattle English Country Dance',
+    location: 'Swedish Club<br/>1920 Dexter Ave N, Seattle, WA 98109',
+    url: 'https://seattledance.org/english/'
+  },
+  {
+    day: 'Friday, March 8, 2024',
+    start: '7:30 PM',
+    end: '10:30 PM',
+    dance: 'PCDC Friday Night English Dance',
+    location: 'Burlingame Water Tower Dance Hall<br/>8936 SW 17th Ave, Portland OR 97219',
+    url: 'https://pcdc.fun/ECD240308'
+  },
+  {
+    day: 'Saturday, March 9, 2024',
+    start: '10:00 AM',
+    end: '12:00 PM',
+    dance: 'Celtic Arts - Scottish Country Dance',
+    location: 'Littlefield Celtic Center<br/>1124 Cleveland Ave, Mount Vernon, WA 98273',
+    url: 'https://www.celticarts.org/event/march-scottish-country-dance-class'
+  },
+  {
+    day: 'Saturday, March 9, 2024',
+    start: '12:30 PM',
+    end: '3:30 PM',
+    dance: 'Olympia Contra Dance',
+    location: 'South Bay Grange<br/>3918 Sleater Kinney Rd NE, Olympia, WA 98506',
+    url: 'https://oly-wa.us/southbaygrange/contra.php'
+  },
+  {
+    day: 'Saturday, March 9, 2024',
+    start: '7:00 PM',
+    end: '10:30 PM',
+    dance: 'Portland Megaband Dance',
+    location: 'Benefit for PCDC<br/>Smith Ballroom at Portland State University<br/>1825 SW Broadway, Portland, OR 97201',
+    url: 'https://portlandmegaband.com/'
+  },
+  {
+    day: 'Saturday, March 9, 2024',
+    start: '7:30 PM',
+    end: '10:00 PM',
+    dance: 'Bellingham Contra Dance',
+    location: 'Fairhaven Library<br/>1117 12th St, Bellingham WA 98225',
+    url: 'https://bellinghamcountrydance.org/'
+  },
+  {
+    day: 'Sunday, March 10, 2024',
+    start: '12:00 PM',
+    end: '6:00 PM',
+    dance: 'The Portland Roadhouse 2024',
+    location: 'Milwaukie Community Club<br/>10666 SE 42nd Ave. Milwaukie, OR 97222',
+    url: 'https://portlandroadhouse.org/'
+  }
 ];
 
 // *********************************************************************************************
@@ -265,6 +382,7 @@ const config = {
   SHARE_OPTIONS,
   YES_NO_OPTIONS,
   DANCES,
+  EVENTS,
   // CAPTCHA_KEY: process.env.REACT_APP_RECAPTCHA_SITE_KEY,
   FIREBASE_PROJECT_ID: process.env.REACT_APP_FIREBASE_PROJECT_ID
 }
