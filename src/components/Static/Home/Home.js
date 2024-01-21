@@ -32,7 +32,8 @@ export default function Home() {
 
         <Paragraph>
           To receive your Iron or Titanium Dancer ribbon at the Portland Roadhouse, 
-          please print the Roadhouse and Promenade flyer (coming soon) and have an organizer or door person initial it at each dance you attend. 
+          please print the passport (<StyledLink to={"cascade-promenade-passport-2024.pdf"}>available here</StyledLink>) 
+          and have an organizer or door person initial it at each dance you attend.
           Flyers/passports will be collected and ribbons awarded as you arrive at the Roadhouse. 
           Iron and Titanium dancers will be recognized during band breaks at the Roadhouse. 
           There will also be a drawing for door prizes.
