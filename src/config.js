@@ -287,14 +287,6 @@ const EVENTS = [
   },
   {
     day: 'Friday, March 8, 2024',
-    start: '7:00 PM',
-    end: '10:00 PM',
-    dance: 'Seattle English Country Dance',
-    location: 'Swedish Club<br/>1920 Dexter Ave N, Seattle, WA 98109',
-    url: 'https://seattledance.org/english/'
-  },
-  {
-    day: 'Friday, March 8, 2024',
     start: '7:30 PM',
     end: '10:30 PM',
     dance: 'PCDC Friday Night English Dance',
