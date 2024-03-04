@@ -25,6 +25,10 @@ export default function Home() {
           The Iron and Titanium Dancer awards return!
         </Paragraph>
 
+        <Typography variant="h4" sx={{ my: 4 }}>
+          <StyledLink to={"passport.pdf"}>Print your passport here!</StyledLink>
+        </Typography>
+
         <Paragraph>
           Dancers who attend at least five dances, including the Portland Roadhouse, can receive an Iron Dancer ribbon at the Portland Roadhouse.
           Dancers who attend at least seven dances, including the Portland Roadhouse, receive the coveted Titanium Dancer ribbon at the Portland Roadhouse.
